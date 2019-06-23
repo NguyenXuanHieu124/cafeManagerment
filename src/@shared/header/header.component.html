@@ -1,0 +1,26 @@
+<div class="cover">
+    <span class="col-xs-12 col-12 col-md-4 form-group" *ngIf="isManager">
+            <div  type = "text" class="button"
+                       [bsConfig]="bsConfig"
+                       #dp="bsDatepicker"
+                       bsDatepicker [(bsValue)]="bsValue" >
+            </div>
+             <span class="Manager"  (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen"><i class="fa fa-calendar"></i></span>
+    </span>
+    <span class="back-arrow" *ngIf="isBackArrow" (click)="navigate()"><i class="fa fa-long-arrow-left"></i></span>
+    <div *ngIf="tabsName" [ngClass]="isNotityBell ? 'add-title':'title'">{{tabsName}}</div>
+    <span [ngClass]="isNotityBell ?'addnotify' : 'notify'" (click)= "quaManager()"*ngIf="isNotityBell===true "><i class="fa fa-user"></i></span>
+    <span class="sign-out" *ngIf="isNotityBell===true||isManager===true"  (click)="onSignOut(template)" title="Đăng xuất">
+        <i class="fa fa-sign-out"></i>
+    </span>
+    <span class="edit" *ngIf="isEdit===true">Edit</span>
+</div>
+<div class="modal">
+    <ng-template #template>
+        <div class="modal-body text-center">
+            <p>Bạn muốn chắc chắn muốn đăng xuất ?</p>
+            <button type="button" class="btn btn-default" (click)="confirm()">Yes</button>
+            <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+        </div>
+    </ng-template>
+</div>

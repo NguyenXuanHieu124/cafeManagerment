@@ -1,0 +1,165 @@
+.border{
+    width: 100%;
+    height: 667px;
+    background-color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    .titleborder{
+        display: flex;
+        .icon{
+            width: 50px;
+            height: 50px;
+            margin-top: 44px;
+            margin-left: 100px;
+        }
+        .title{
+            font-size: 200%;
+            margin-left: 20px;
+            padding-top: 50px;
+            color: #422912;
+        }
+    }
+    .details{
+        margin-left: 20px;
+        padding-top: 60px;
+        .show{
+            height: 19px;
+            margin-left: 10px;
+            width: 60%;
+            color: #727272;
+        }
+        .input{
+            border: #422912;
+            height: 30px;
+            margin-top: -5px;
+            padding-left: 10px;
+            width: 60%;
+            border-radius: 10px;
+            border-style: bold;
+            border-radius: #422912;
+            background: #F2F2F8;
+            color: #727272;
+        }
+        .usernameborder{
+            display: flex;
+            .username{
+                color: #422912;
+                width: 35%;
+            }
+            height: 40px;
+        }
+        .emailborder{
+            display: flex;
+            height: 40px;
+            .email{
+                color: #422912;
+                width: 35%;
+            }
+        }
+        .fullnameborder{
+            display: flex;
+            height: 40px;
+            .fullname{
+                color: #422912;
+                width: 35%;
+            }
+        }
+        .ageborder{
+            display: flex;
+            height: 40px;
+            .age{
+                color: #422912;
+                width: 35%;
+            }
+        }
+        .genderborder{
+            display: flex;
+            height: 40px;
+            .gender{
+                color: #422912;
+                width: 35%;
+            }
+            .chose{
+                display: flex;
+                justify-content: space-around;
+                margin-top: -4px;
+                .man{
+                    border: none;
+                    height: 30px;
+                    margin-top: -1px;
+                    width: 50px;
+                    border-radius: 10px;
+                    margin-left: 45px;
+                    background-color: #C8B496;
+                    color: white;
+                }
+                .women{
+                    border: none;
+                    height: 30px;
+                    margin-top: -1px;
+                    width: 50px;
+                    border-radius: 10px;
+                    margin-left: 50px;
+                    background-color: #C8B496;
+                    color: white;
+                }
+            }
+        }
+        .addressborder{
+            display: flex;
+            height: 40px;
+            .address{
+                color: #422912;
+                width: 35%;
+            }
+        }
+        .phonenumberborder{
+            display: flex;
+            height: 40px;
+            .phonenumber{
+                color: #422912;
+                width: 35%;
+            }
+        }
+        .changepassword{
+            .oldpwborder{
+                display: flex;
+                height: 40px;
+                .oldpw{
+                    color: #422912;
+                    width: 35%;
+                }
+            }
+            .newpwborder{
+                display: flex;
+                height: 40px;
+                .newpw{
+                    color: #422912;
+                    width: 35%;
+                }
+            }
+            .confirmborder{
+                display: flex;
+                height: 40px;
+                .confirm{
+                    color: #422912;
+                    width: 35%;
+                }
+            }
+        }
+    }
+    .function{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        .button{
+            border-radius: 15px;
+            border-color: #C8B496;
+            background-color: #422912;
+            color: white;
+            width: 100px;
+            height: 40px;
+            border: none;
+        }
+    }
+}

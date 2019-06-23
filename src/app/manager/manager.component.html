@@ -1,0 +1,24 @@
+<div class="background">
+  <div class="header">
+    <p class="title">THANG {{Thang}} TOTAL BALANCE</p>
+    <h4 class="income">{{ToTal | currency:' ': true : '1.0-3' }} VNĐ</h4>
+    <div style="text-align: center;">
+      <p class="profit">- 96,000</p>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="menuincome">
+        <p class="titleincome"> Doanh Thu </p>
+      <div class="listincome" >
+          <app-managerbranchincome *ngFor = "let income of incomes" [income] = "income">    </app-managerbranchincome>
+        
+      </div>
+      <div class="total">
+        <p class="word">Tổng cộng</p>
+        <p class="number">{{ ToTal | currency:' ': true : '1.0-3' }} VNĐ</p>
+
+      </div>
+    </div>
+  </div>
+</div>

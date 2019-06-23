@@ -1,0 +1,72 @@
+<div class="border">
+  <div class="titleborder">
+    <img class="icon" src="https://slenky.me/uploads/avatars/placeholder.png">
+    <p class="title">USER</p>
+  </div>
+  <div class="details">
+    <div class="usernameborder">
+      <p class="username" style="height: 22px;">Tên đăng nhập </p>
+      <p class="show">{{username}}</p>
+    </div>
+    <div class="emailborder">
+      <p class="email">Email </p>
+      <p class="show">{{email}}</p>
+    </div>
+    <div class="fullnameborder">
+      <p class="fullname">Họ tên </p>
+      <p class="show" *ngIf="!isEdit">{{fullname}}</p>
+      <input class="input" *ngIf="isEdit" type="name" [(ngModel)]="getfullname" />
+    </div>
+    <div class="ageborder">
+      <p class="age">Năm sinh</p>
+      <p class="show" *ngIf="!isEdit">{{age}}</p>
+      <input class="input" *ngIf="isEdit" type="number" [(ngModel)]="getage" />
+    </div>
+    <div class="genderborder">
+      <p class="gender">Giới tính </p>
+      <p class="show" *ngIf="!isEdit">{{ isGender ? 'Nam' : 'Nữ' }}</p>
+      <div class="chose" *ngIf="isEdit">
+        <button class="man" (click)="ManGender()" *ngIf= "getGender"
+        style="background-color: #422912">Nam</button>
+        <button class="man" (click)="ManGender()" *ngIf= "!getGender">Nam</button>
+        <button class="women" (click)="WomenGender()" *ngIf= "!getGender"
+        style="background-color: #422912">Nữ</button>
+        <button class="women" (click)="WomenGender()" *ngIf= "getGender">Nữ</button>
+      </div>
+    </div>
+    <div class="addressborder">
+      <p class="address">Địa chỉ </p>
+      <p class="show" *ngIf="!isEdit">{{address}}</p>
+      <input class="input" *ngIf="isEdit" type="text" [(ngModel)]="getaddress" />
+    </div>
+    <div class="phonenumberborder">
+      <p class="phonenumber">Điện thoại </p>
+      <p class="show" *ngIf="!isEdit">{{phonenumber}}</p>
+      <input class="input" *ngIf="isEdit" type="text" [(ngModel)]="getphonenumber" />
+    </div>
+    <div class="changepassword" [@openClose]="isOpen ? 'open' : 'closed'">
+      <div class="oldpwborder" *ngIf="isPW">
+        <p class="oldpw">Mật khẩu cũ</p>
+        <input class="input" type="password" [(ngModel)]="getoldpw" />
+      </div>
+      <div class="newpwborder" *ngIf="isPW">
+        <p class="newpw">Mật khẩu mới</p>
+        <input class="input" type="password" [(ngModel)]="newpw" />
+      </div>
+      <div class="confirmborder" *ngIf="isPW">
+        <p class="confirm">Nhập lại</p>
+        <input class="input" type="password" [(ngModel)]="confirm" />
+      </div>
+    </div>
+  </div>
+  <hr  width="70%%" size="3px" align="center" color="#422912" margin-top="0px"/>  
+  <div class="function">
+    <button class="button" (click)="Edit = !Edit ; onClickEdit()" *ngIf="!Edit && !Changepw">Chỉnh sửa</button>
+    <button class="button" (click)="Edit = !Edit ; onClickSaveInfor()" *ngIf="Edit">Lưu</button>
+    <button class="button" (click)="Edit = !Edit ; onClickCancel()" *ngIf="Edit">Hủy</button>
+    <button class="button" (click)="Changepw = !Changepw ; onClickPW() ; toggle()" *ngIf="!Edit && !Changepw">Mật Khẩu</button>
+    <button class="button" (click)="Changepw = !Changepw ; onClickSavePW() ; toggle()" *ngIf="Changepw">Lưu</button>
+    <button class="button" (click)="Changepw = !Changepw ; onClickCancel() ; toggle()" *ngIf="Changepw">Hủy</button>
+    <button class="button" (click)="onClickExit()">Thoát</button>
+  </div>
+</div>

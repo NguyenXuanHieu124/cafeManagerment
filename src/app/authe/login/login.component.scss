@@ -1,0 +1,92 @@
+@media only screen and (min-width: 375px) {
+    .login{
+        width: 300px;
+        margin: 0 auto;
+        .img{
+            margin-top: 43.06px;
+            width: 50.16px;
+            height: 79.82px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2{
+            height: 28px;
+            font-size: 20px;
+            font-family: Poppins;
+            color: #422912;
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 8.36px;
+            margin: 0;
+        }
+        .helping{
+            margin: 0;
+           height: 19px;
+           color: #B8B6B6;
+           font-size: 13px;
+           text-align: center;
+           margin-bottom: 37.21px;
+       }
+       .form{
+        margin: 0;
+        // height: 125.08px;
+        margin-left: 13.5px;
+           .form-ip{
+            margin: 0;
+            width: 273.11px;
+            position: relative;
+                label{
+                margin: 0;
+                margin-top: 37.21px;
+                color: #422912;
+                font-weight: 600;
+                font-size: 12px;
+                height: 15px;
+                width: 68px;
+                }
+                input{
+                    width: 273.11px;
+                    height: 25.379px;
+                    border: 0px;
+                    border-bottom: 1px solid #000000;
+                    color: gray;
+                    outline: none;
+                }
+                .alert{
+                    position: relative;
+                    padding: .75rem 1.25rem;
+                    margin-bottom: 1rem;
+                    border: 1px solid transparent;
+                    border-radius: .25rem;
+                }
+                .alert-danger{
+                    color: #721c24;
+                    background-color: #f8d7da;
+                    border-color: #f5c6cb;
+                }
+                i{
+                    position: absolute;
+                    right: 0;
+                    color: #CFCFCF;
+                    width: 10.83px;
+                    height: 11.81px;
+                    font-size: 10px;
+                    padding-top: 6px;
+                }
+            }
+        }
+    .btn{
+        // margin-top:202.37px;
+        margin-top: 50px;
+        height: 50px;
+        width: 300px;
+        border-radius: 40px;
+        color: #FFFFFF;
+        background: #422912;
+        padding: 15px;
+        font-size: 14px;
+        outline: none;
+        }
+    }
+}

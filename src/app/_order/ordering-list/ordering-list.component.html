@@ -1,0 +1,176 @@
+<div class="container" (window:resize)="onResize($event)">
+    <div class="row">
+        <div class="item-left">
+            <div class="avatar">
+                <div class="online"></div>
+            </div>
+            <ul>
+                <li class="item-footer" routerLink="/table"><i class="fa fa-shopping-cart" title="Quay về bàn"></i>
+                    <div class="line"></div>
+                </li>
+                <li class="item-footer" routerLink="/menu" title="Đi đến Menu">
+                    <img src="../../../assets/icon/coffee-bean-for-a-coffee-break.svg" alt="caffee bean" class="cafe-bean">
+                    <div class="line"></div>
+                </li>
+                <li class="item-footer" (click)="onLogout()"><i class="fa fa-user" title="Đăng xuất"></i>
+                    <div class="line"></div>
+                </li>
+                <li class="item-footer"><i class="fa fa-cog"></i>
+                    <div class="line"></div>
+                </li>
+            </ul>
+            <div class="sign-out" (click)="signOut()" title="Đăng xuất tài khoản"><i class="fa fa-sign-out"></i> </div>
+        </div>
+        <div class="item-right ">
+            <div class="cover-header">
+                <div class="wrapper-head">
+                    <div class="table-name">
+                        {{tableName}}
+                    </div>
+                    <div class="customer-name">
+                        CUSTOMER'S NAME
+                    </div>
+                    <input class="display-name" placeholder="Nhập tên của khách hàng ..." [(ngModel)]="customerName">
+                </div>
+                <div class="slide">
+                    <ul class="menu">
+                        <li [class]="valueClass.classCoffee" (click)="onCoffee()">
+                            <div class="icon">
+                                <span><i class="fa fa-coffee"></i></span>
+                            </div>
+                            <div class="item-name">
+                                Coffee
+                            </div>
+                        </li>
+                        <li [class]="valueClass.classTea" (click)="onTea()">
+                            <div class="icon">
+                                <span>
+                                    <i class="fa fa-glass" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <div class="item-name">
+                                Tea
+                            </div>
+                        </li>
+                        <li [class]="valueClass.classSpecial" (click)="onSpecial()">
+                            <div class="icon" style="color:#000">
+                                <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>
+                            </div>
+                            <div class="item-name">
+                                Special
+                            </div>
+                        </li>
+                        <li [class]="valueClass.classDessert" (click)="onDessert()">
+                            <div class="icon" style="color:#000">
+                                <img src="../../../assets/icon/dessert.svg" alt="dessert">
+                            </div>
+                            <div class="item-name">
+                                Dessert
+                            </div>
+                        </li>
+                        <!-- hiện thị giỏ hàng trống nếu thông tin ordering ko tồn tại -->
+                        <li class="item-cart" *ngIf="!_orderingInfo">
+                            <div class="shopping-cart" (click)="onOrderCart()">
+                                <span class="cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <div class="count-order">
+                                        <div class="number">
+                                            0
+                                        </div>
+                                    </div>
+                                </span>
+                                <div class="shopping-price"> 0 vnđ </div>
+                            </div>
+                        </li>
+                        <!-- hiện thị thông tin sản phẩm nếu ordering tồn tại -->
+                        <li class="item-cart" *ngIf="_orderingInfo">
+                            <div class="shopping-cart" (click)="onOrderCart()">
+                                <span class="cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <div class="count-order">
+                                        <div class="number">
+                                            {{_orderingInfo?.quantity}}
+                                        </div>
+                                    </div>
+                                </span>
+                                <div class="shopping-price"> {{_orderingInfo?.totalPayment | currency:' ': true : '1.0-3'}} VNĐ </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-list">
+                    <div class="row">
+                        <app-order-item *ngFor="let product of products" [product]="product">
+                        </app-order-item>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 item-footer">
+                            <div class="shopping-cart" *ngIf="!_orderingInfo">
+                                <span class="cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <div class="count-order">
+                                        <div class="number">
+                                            0
+                                        </div>
+                                    </div>
+                                </span>
+
+                                <div class="shopping-price">
+                                    0 vnd
+                                </div>
+                                <span class="arrow-up" (click)="toggleOpen()"><i class="fa fa-arrow-up"></i></span>
+                            </div>
+                            <div class="shopping-cart" *ngIf="_orderingInfo">
+                                <span class="cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <div class="count-order">
+                                        <div class="number">
+                                            {{_orderingInfo?.quantity}}
+                                        </div>
+                                    </div>
+                                </span>
+
+                                <div class="shopping-price">
+                                    {{_orderingInfo?.totalPayment | currency:' ': true : '1.0-3'}} VNĐ
+                                </div>
+                                <span class="arrow-up" (click)="toggleOpen()"><i class="fa fa-arrow-up"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-toggleClosesm-6 col-md-6 col-lg-6 arrow">
+                            <div class="wrapper-footer-order" (click)="orderNow()">
+                                Order Now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="open-ordering-list" [@openClose]="isOpenOrder?'closed':'open'">
+                <div class="wrapper-header-open">
+                    <div class="title">
+                        Your Order
+                    </div>
+                    <div class="arrow-down">
+                        <span (click)="toggleClose()"><i class="fa fa-arrow-down"></i></span>
+                    </div>
+                </div>
+                <ul>
+                    <li *ngFor="let item of productOrders">
+                        <div class="product-name">
+                            {{item.TenSP}}
+                        </div>
+                        <div class="product-price">{{item.SoLuong}} x {{item.Gia | currency:' ': true : '1.0-3'}} VNĐ</div>
+                    </li>
+                    <li class="note-something">
+                        <textarea type="text" placeholder="Note Something"></textarea>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

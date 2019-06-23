@@ -1,0 +1,12 @@
+<div class="title">Chọn bàn:
+  <mat-dialog-actions>
+    <button [mat-dialog-close]="true"><i class="fa fa-times-circle"></i></button>
+  </mat-dialog-actions>
+</div>
+<div class="form-order">
+  <p class="tb-number">Table Number</p>
+  <select (change)="onChange($event.target.value)">
+    <option selected>Choose Table:</option>
+    <option *ngFor="let table of tables; let i = index" [value]="table.BanID">{{table.TenBan}}</option>
+  </select>
+</div>

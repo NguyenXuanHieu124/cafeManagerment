@@ -1,0 +1,13 @@
+<app-header></app-header>
+<div class="container" *ngIf="product">
+  <div class="bg-details" [style.background-image]="'url('+product?.LinkImage+')'">
+  </div>
+  <div class="description">
+    <div class="item-name">
+      {{product.TenSP}}
+  </div>
+    <div class="content">
+      {{product?.MoTa}}
+    </div>
+  </div>
+</div>

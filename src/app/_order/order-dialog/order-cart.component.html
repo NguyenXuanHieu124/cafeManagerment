@@ -1,0 +1,32 @@
+<div class="title">Thông tin gọi món
+    <mat-dialog-actions>
+        <button [mat-dialog-close]="true"><i class="fa fa-times-circle"></i></button>
+    </mat-dialog-actions>
+</div>
+<div class="form-order">
+    <p class="tb-number">Table Number</p>
+    <select [(ngModel)]="selected" (change)="onChange($event.target.value)">
+        <option>Choose Table:</option>
+        <option *ngFor="let table of tables; let i = index" [value]="table.BanID">{{table.TenBan}}</option>
+    </select>
+    <p class="tb-customer">Customer Name</p>
+    <input type="text" id="customer-name" [(ngModel)]="customerName" placeholder="Nhập tên khách hàng ...">
+    <div class="orders">Orders
+        <ul class="menu-order">
+            <li class="item-order" *ngFor="let product of products">
+                <input type="checkbox">
+                <span class="order-name">{{product.TenSP}}</span>
+                <span class="quantity">{{product.SoLuong}} x {{product.Gia | currency:' ': true : '1.0-3'}} VNĐ</span>
+            </li>
+        </ul>
+    </div>
+    <div class="total-payment">Total: {{_totalPayment | currency:' ': true : '1.0-3'}} VNĐ</div>
+    <div class="order-now">
+        <mat-dialog-actions>
+            <button type="button" class="btn btn-outline-warning"
+            [disabled]="!_totalPayment || !customerName"
+            title="Click để Order"
+                (click)="onOrderNow()" [mat-dialog-close]="true">Order Now</button>
+        </mat-dialog-actions>
+    </div>
+</div>

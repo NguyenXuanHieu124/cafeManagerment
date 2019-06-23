@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 orders">
+      Orders
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 serve">
+      Serve
+    </div>
+  </div>
+  <div class="row order-list">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 row-order" *ngFor="let product of products">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 item" [style.background-image]="'url('+product?.LinkImage+')'"
+            style="background:#333; background-repeat: no-repeat; background-size:cover; background-position:center; height: 100%;">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 description">
+        <div class="cover">
+          <div class="product-name">
+            {{product?.TenSP}}
+          </div>
+          <div class="product-price">
+            {{product?.Gia}} vnd
+          </div>
+          <div class="quantity">
+            <div class="number">{{product?.SoLuong}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="infor-order">
+    <textarea>
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
+      layout.
+    </textarea>
+    <div class="more-order">
+      <button>MORE ORDER</button>
+    </div>
+    <div class="done">
+      <button (click)="onViewOrderOrderNow()" [disabled]="!checkOrder">DONE</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+app-header{
+    display: block;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.container{
+    width: 100%;
+    height: 92vh;
+    background: #f2f2f8;
+    position: absolute;
+    top: 8vh;
+    overflow-y: scroll;
+    .bg-details{
+        width: 100%;
+        height: 375px;
+        background: #333;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:center;
+    }
+    .description{
+        padding: 0 21px 15px;
+        background: #f2f2f8;
+        .item-name{
+            color: #422912;
+            font-size: 20px;
+            padding-bottom: 10px;
+            padding-top: 15px;
+        }
+        .content{
+            color: #727272;
+            font-size: 17px;
+        }
+    }
+}
+
+@media (min-width: 600px){
+    .container{
+        .bg-details{
+            height: 500px;
+            background-size: 100% 500px;
+        }
+    }
+}
+@media (min-width: 992px){
+    .container{
+        .bg-details{
+            height: 550px;
+            background-size: 100% 550px;
+        }
+        .description{
+            padding: 15px 50px;
+        }
+    }
+}

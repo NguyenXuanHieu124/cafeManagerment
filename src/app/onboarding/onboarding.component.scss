@@ -1,0 +1,48 @@
+@media only screen and (min-width: 375px) {
+        .onboarding{
+            width: 345.81px;
+            margin: 0 auto;
+            img{
+                width: 345.81px;
+                height: 351.9px;
+                background: #ffffff;
+                margin-bottom: 18.11px;
+            }
+            h2{
+                color: #422912;
+                font-size: 18px;
+                height: 31px;
+                width: 297px;
+                font-family: iCiel Nabila;
+                margin-bottom: 7.55px;
+                text-align: center;
+                padding-left: 43.54px;
+                font-weight: 600;
+            }
+            p{
+                text-align: center;
+                color: #422912;
+                font-size: 13px;
+                font-family: Poppins;
+                opacity: 90%;
+                margin-bottom: 45.58px;
+                width: 243.59px;
+                height: 68.54px;
+                padding-left: 65.54px;
+            }
+            button{
+                width: 221.7px;
+                height: 50px;
+                background: #422912;
+                color: #ffffff;
+                border-radius: 40px;
+                font-family: Poppins;
+                outline: none;
+                margin-left: 60px;
+                font-size: 14px;
+            }
+            button:hover{
+                cursor: pointer;
+            }
+        }
+}

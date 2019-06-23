@@ -1,0 +1,23 @@
+:host{
+    height: 100vh;
+    width: 100%;
+    display: block;
+    app-header{
+        height: 8vh;
+        width: 100%;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+    app-footer{
+        height: 10.2vh;
+        width: 100%;
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+    }
+}

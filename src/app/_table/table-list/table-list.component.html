@@ -1,0 +1,76 @@
+<div class="row row_mobile" (window:resize)="onResize($event)">
+  <div class="col-xs-12 col-top">
+    <span class="display">Display</span>
+    <div class="gly">
+      <span class="glyphicon glyphicon-th-large" (click)="two()"></span>
+      <span class="glyphicon glyphicon-stop" (click)="one()"></span>
+    </div>
+  </div>
+  <app-table *ngFor="let table of tables" [table]="table" [ngClass]="isClicked ? 'col-xs-6' : 'col-xs-12'"></app-table>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="item-left">
+      <div class="avatar">
+        <div class="online"></div>
+      </div>
+      <ul>
+        <li class="item-footer" routerLink="/table"><i class="fa fa-shopping-cart"></i>
+          <div class="line"></div>
+        </li>
+        <li class="item-footer" routerLink="/menu">
+          <img src="../../../assets/icon/coffee-bean-for-a-coffee-break.svg" alt="caffee bean" class="cafe-bean">
+          <div class="line"></div>
+        </li>
+        <li class="item-footer" (click)="onLogout()"><i class="fa fa-user"></i>
+          <div class="line"></div>
+        </li>
+        <li class="item-footer"><i class="fa fa-cog"></i>
+          <div class="line"></div>
+        </li>
+      </ul>
+      <div class="sign-out" (click)="signOut()" title="Đăng xuất tài khoản"><i class="fa fa-sign-out"></i> </div>
+    </div>
+    <div class="item-right ">
+      <h2 class="tabList">Table List</h2>
+      <div class="col-md-4 col-lg-4 item">
+        <div class="card newTable">
+          <div class="content" (click)="NewTable()">
+            <img src="../../../assets/add table.png" alt="addTable">
+            <p>New Table</p>
+          </div>
+        </div>
+      </div>
+
+      <div *ngFor="let Bill of Bills" class="col-md-4 col-lg-4 item">
+        <div class="card table">
+          <div class="table_header fixed-top">
+            <h2>{{Bill.TenBan}}</h2>
+            <button class="btn customer">{{Bill.TenKhachHang}}</button>
+          </div>
+          <hr class="hr_head_foot">
+          <div class="content">
+            <div class="row">
+              <ul>
+                <li *ngFor="let CTHD of Bill.CTHDs">
+                  <span>{{CTHD.TenSanPham}}</span>
+                  <span class="countPro">{{CTHD.SoLuong}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="table_footer fixed-bottom">
+            <button class="btn" (click)="Ordered(Bill.BanID)"><img src="../../../assets/avail.png" alt="avail"></button>
+            <button class="hr">
+              <hr></button>
+            <button class="btn"><img src="../../../assets/repair.png" alt="repair"></button>
+            <button class="hr hr_service">
+              <hr></button>
+            <button class="btn btn_service"><img src="../../../assets/serve.png" alt="serve"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

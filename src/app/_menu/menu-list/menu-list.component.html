@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="cover-header">
+    <div class="slide">
+      <ul class="menu">
+        <li [class]="valueClass.classCoffee" (click)="onCoffee()">
+          <div class="icon">
+            <span><i class="fa fa-coffee"></i></span>
+          </div>
+          <div class="item-name">
+            Coffee
+          </div>
+        </li>
+        <li [class]="valueClass.classTea" (click)="onTea()">
+          <div class="icon">
+            <span>
+              <i class="fa fa-glass" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="item-name">
+            Tea
+          </div>
+        </li>
+        <li [class]="valueClass.classSpecial" (click)="onSpecial()">
+          <div class="icon" style="color:#000">
+            <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>
+          </div>
+          <div class="item-name">
+            Special
+          </div>
+        </li>
+        <li [class]="valueClass.classDessert" (click)="onDessert()">
+          <div class="icon" style="color:#000">
+            <img src="../../../assets/icon/dessert.svg" alt="dessert">
+          </div>
+          <div class="item-name">
+            Dessert
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-list">
+      <div class="row">
+        <app-menu *ngFor="let product of products"
+        [product]="product"></app-menu>
+      </div>
+    </div>
+  </div>
+</div>

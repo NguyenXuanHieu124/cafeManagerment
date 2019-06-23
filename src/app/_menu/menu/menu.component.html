@@ -1,0 +1,23 @@
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 app-menu-item">
+    <div class="row item">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 product-image" [style.background-image]="'url('+product.LinkImage+')'"
+            style="background-repeat: no-repeat; background-size:cover; background-position:center;">
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 description">
+            <div class="cover">
+                <div class="item-name" [title]="product.TenSP">
+                    {{product.TenSP}}
+                </div>
+                <div class="item-price">
+                    {{product.Gia | currency:' ': true : '1.0-3'}} VNĐ
+                </div>
+                <div class="item-detail" [title]="product.MoTa">
+                    {{product.MoTa | description}}
+                </div>
+                <div class="item-button">
+                    <button (click)="onDetail(product)">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

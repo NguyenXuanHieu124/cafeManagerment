@@ -1,0 +1,50 @@
+.cover{
+    height: 100%;
+    width: 100%;
+    background: #422912;
+    color: #FFFFFF;
+    line-height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    .title{
+        text-transform: uppercase;
+        font-size: 17px;
+        text-align: center;
+        font-weight: bold;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .sign-out{
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        font-size: 21px;
+    }
+    .add-title{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        text-transform: uppercase;
+        font-size: 17px;
+        text-align: center;
+        font-weight: bold;
+        width: 65%;
+    }
+    span.back-arrow {
+        font-size: 34px;
+    }
+    span.notity {
+        font-size: 21px;
+    }
+    span.addnotify{
+        font-size: 21px;
+        position: absolute;
+        left: 15px;
+    }
+    span.Manager{
+        font-size: 34px;
+    }
+}

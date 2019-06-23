@@ -1,0 +1,36 @@
+<div class="item_Mobile">
+  <div class="card card_mobile">
+    <div [ngClass]="{'table-order': table.Status === 1,
+                           'table-preparing':table.Status === 4,
+                          'table-shared':table.Status === 2 || table.Status === 3
+                           }">
+
+      <div class="table-header">
+        <h2>{{table.TenBan}}</h2>
+        <span class="available" *ngIf="table.Status === 1">Available</span>
+        <button class="btn customer" *ngIf="table.Status !== 1">{{table.TenKhachHang}}</button>
+      </div>
+      <div class="table-footer">
+        <div class="flex-row">
+          <div class="flex-column1">
+            <button class="btn count-order" *ngIf="table.Status !== 1" (click)="order(table)">
+              {{table.SoLuongOrder}} Order
+            </button>
+            <!-- <button class="new-order" *ngIf="table.Status === 4">1 News</button> -->
+          </div>
+          <div class="flex-column2">
+            <!-- <button class="btn spServiced" *ngIf="table.Status === 4">Serviced</button> -->
+            <button class="btn" (click)="sttTable(table)" *ngIf="table.Status !== 1" [ngClass]="{
+                                                                      'serviced':table.Status === 2,
+                                                                      'preparing':table.Status ===4,
+                                                                      'ready':table.Status === 3}">
+              {{table.Status | tablestatus}}
+            </button>
+            <button class="btn hoanThanh" (click)="Accomplished(table)" *ngIf="table.Status !==1">Accomplished</button>
+            <button class="btn order" *ngIf="table.Status === 1" (click)="order(table)">Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

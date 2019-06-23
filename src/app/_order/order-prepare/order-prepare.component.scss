@@ -1,0 +1,69 @@
+:host{
+    max-width: 100%;
+    height: 84vh;
+    display: block;
+    position: absolute;
+    top: 8vh;
+    @media only screen and (min-width: 375px) {
+        .row {
+            // width: 343px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            padding: 0 20px !important;
+            // display: flex;
+            // justify-content: space-between;
+            .col-xs-6{
+                // margin: 12px;
+                background: #FFFFFF;
+                margin-top: 16px;
+                // width: 162px;
+                // border: 0.5px solid #ccc;
+                // border-radius: 5px;
+                height: 100px;
+                .cover-table{
+                    width: 162px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    padding: 7px;
+                    .table-header{
+                        display: flex;
+                        justify-content: space-between;
+                        padding-top: 7px;
+                        height: 39px;
+                        border-bottom: 0.5px solid #ccc;
+                        h2{
+                            height: 19px;
+                            width: 40px;
+                            color: #422912;
+                            font-size: 12px;
+                            font-family: Poppins;
+                            margin: 0;
+                        }
+                        .customer{
+                            text-align: center;
+                            width: 68px;
+                            height: 25px;
+                            font-size: 10px;
+                            border: 1px;
+                            background: #422912;
+                            outline: none;
+                            color: #ffffff;
+                            border-radius: 20px;
+                        }
+                    }
+                }
+
+            }
+            .table-footer{
+                margin-top: 20px;
+                .count-order{
+                    font-size: 12px;
+                    width: 51px;
+                    height: 17px;
+                    color: #575656;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}
