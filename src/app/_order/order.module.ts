@@ -7,7 +7,7 @@ import { ViewOrderComponent } from './view-order/view-order.component';
 import { OrderPrepareComponent } from './order-prepare/order-prepare.component';
 import { OrderItemComponent } from './order-item/order-item.component';
 import { OrderCartDialogComponent } from './order-dialog/order-cart.component';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

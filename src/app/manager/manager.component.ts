@@ -4,9 +4,8 @@ import { Router } from '@angular/router';
 import { Income } from 'src/@core/interfaces/income.interface';
 import { IncomeService } from 'src/@core/services/manager/income.service';
 import { DisplaytabsService } from 'src/@core/services/table/displaytabs.service';
-import { BsDatepickerConfig, BsDatepickerViewMode, DayPickerComponent, DatePickerComponent, BsDatepickerDirective } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerConfig, BsDatepickerViewMode, BsDatepickerDirective } from 'ngx-bootstrap/datepicker';
 import { BsDatepickerActions } from 'ngx-bootstrap/datepicker/reducer/bs-datepicker.actions';
-import { forEach } from '@angular/router/src/utils/collection';
 import { Subscription } from 'rxjs';
 import { JwtService } from 'src/@core/services/jwt.service'
 import {DatepickerService1} from 'src/@core/services/manager/datepicker.service'

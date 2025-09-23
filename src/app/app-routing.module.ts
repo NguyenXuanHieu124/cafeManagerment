@@ -14,22 +14,22 @@ const routes: Routes = [
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LauchScreenComponent },
   { path: 'on-boarding', component: OnboardingComponent },
-  { path: 'auth', loadChildren: './authe/auth.module#AuthModule' },
+  { path: 'auth', loadChildren: () => import('./authe/auth.module').then(m => m.AuthModule) },
   {
     path: '', component: LayoutComponent, children: [
       {
         path: '', redirectTo: 'table', pathMatch: 'full'
       },
       {
-        path: 'table', loadChildren: './_table/table.module#TableModule'
+        path: 'table', loadChildren: () => import('./_table/table.module').then(m => m.TableModule)
       },
       {
-        path: 'order', loadChildren: './_order/order.module#OrderModule'
+        path: 'order', loadChildren: () => import('./_order/order.module').then(m => m.OrderModule)
       },
       {
-        path: 'menu', loadChildren: './_menu/menu.module#MenuModule'
+        path: 'menu', loadChildren: () => import('./_menu/menu.module').then(m => m.MenuModule)
       },
-      { path:'manager', loadChildren:'./manager/manager.module#ManagerModule'}
+      { path:'manager', loadChildren: () => import('./manager/manager.module').then(m => m.ManagerModule)}
     ]
   },
   { path: 'detail/:id', component: DetailsComponent },

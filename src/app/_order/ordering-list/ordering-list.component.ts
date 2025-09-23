@@ -7,7 +7,7 @@ import { DisplaytabsService } from 'src/@core/services/table/displaytabs.service
 import { ProductService } from 'src/@core/services/products/product.service';
 import { Product } from 'src/@core/interfaces/product.interface';
 import { CategoryService } from 'src/@core/services/products/category.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { OrderCartDialogComponent } from '../order-dialog/order-cart.component';
 import { TableOrderService } from 'src/@core/services/table/tb-order.service';
 import { TablesService } from 'src/@core/services/table/tables.service';
@@ -42,6 +42,9 @@ import { TablesInfoService } from 'src/@core/services/table/tables-info.service'
   ]
 })
 export class OrderingListComponent implements OnInit {
+  onLogout() {
+    // TODO: Thêm logic đăng xuất nếu cần
+  }
 
   isOpenOrder = true;
   valueClass: ValueClass;

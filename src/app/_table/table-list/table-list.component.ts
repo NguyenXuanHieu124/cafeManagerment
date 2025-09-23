@@ -11,7 +11,7 @@ import { CTHDService } from 'src/@core/services/bills/CTHD.service';;
 import { JwtService } from 'src/@core/services/jwt.service';
 import { AuthService } from 'src/@core/auth/auth.service';
 import { ToastrService } from 'ngx-toastr';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { NewTableComponent } from '../new-table/new-table.component';
 @Component({
   selector: 'app-table-list',
@@ -19,6 +19,9 @@ import { NewTableComponent } from '../new-table/new-table.component';
   styleUrls: ['./table-list.component.scss'],
 })
 export class TableListComponent implements OnInit {
+  onLogout() {
+    // TODO: Thêm logic đăng xuất nếu cần
+  }
 
   isClicked = true;
   public tables: Table[] = [];

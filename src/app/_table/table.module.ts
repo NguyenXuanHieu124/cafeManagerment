@@ -5,7 +5,7 @@ import { TableRoutingModule } from './table-routing.module';
 import { TableListComponent } from './table-list/table-list.component';
 import { TableComponent } from './table/table.component';
 import { SharedModule } from 'src/@shared/shared.module';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { NewTableComponent } from './new-table/new-table.component';
 

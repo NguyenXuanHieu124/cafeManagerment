@@ -23,7 +23,7 @@ export class ViewOrderComponent implements OnInit, OnDestroy {
   customerName = '';
   newProductOrder: Product[] = [];
   _orderingInfo: any;
-  private products: Product[];
+  public products: Product[];
   checkOrder = true; // kiểm tra đã bấm order hay chưa ?
   constructor(
     private title: Title,

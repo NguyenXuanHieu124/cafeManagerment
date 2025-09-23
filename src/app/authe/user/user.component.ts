@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition} from '@angular/animations';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { elementEventFullName } from '@angular/core/src/view';
 
 @Component({
   selector: 'app-user',
@@ -29,6 +28,8 @@ import { elementEventFullName } from '@angular/core/src/view';
 })
 export class UserComponent implements OnInit {
   public isEdit:boolean = false;
+  public Edit: boolean = false;
+  public Changepw: boolean = false;
   public isPW: boolean = false;
   public username: string = "cuong1804";
   public email: string = "nongkimcuong.it@gmail.com";

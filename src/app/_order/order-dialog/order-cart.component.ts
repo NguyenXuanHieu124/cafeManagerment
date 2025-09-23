@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TablesService } from 'src/@core/services/table/tables.service';
 import { Table } from 'src/@core/interfaces/table.interface';
 import { TableOrderService } from 'src/@core/services/table/tb-order.service';

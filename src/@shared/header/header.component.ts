@@ -7,7 +7,7 @@ import { JwtService } from 'src/@core/services/jwt.service';
 import { AuthService } from 'src/@core/auth/auth.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-import { BsDatepickerDirective, BsDatepickerViewMode, BsDatepickerConfig } from 'ngx-bootstrap/datepicker/';
+import { BsDatepickerDirective, BsDatepickerViewMode, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { DatepickerService1 } from 'src/@core/services/manager/datepicker.service';
 import { RolesService }from 'src/@core/services/manager/roles.service'
 @Component({
