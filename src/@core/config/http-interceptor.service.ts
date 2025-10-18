@@ -31,7 +31,6 @@ export class HttpInterceptorService implements HttpInterceptor {
             // redirect to the login route
             this.router.navigate(['auth']);
             this.jwtService.destroyToken();
-            console.log('Error 401 rồi cu ... ');
             throw err;
           }
           throw err;

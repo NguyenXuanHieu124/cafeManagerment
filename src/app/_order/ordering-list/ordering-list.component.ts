@@ -15,7 +15,6 @@ import { BillService } from 'src/@core/services/bills/bill.service';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/@core/auth/auth.service';
 import { JwtService } from 'src/@core/services/jwt.service';
-import { Subscription } from 'rxjs';
 import { TablesInfoService } from 'src/@core/services/table/tables-info.service';
 
 @Component({
@@ -172,10 +171,10 @@ export class OrderingListComponent implements OnInit {
 
   orderNow() {
     const tableID = +this.activatedRoute.snapshot.params.id;
-    if (!this.customerName) {
+    if (!this.customerName) { 
       this.toastr.error('Tên khách hàng chưa được nhập !');
     } else {
-      this.tbInfoService.setCustomerName(this.customerName);
+      this.tbInfoService.setCustomerName(this.customerName); 
       this.router.navigate(['/order/view-order', tableID]);
       this.displayTabService.setTabsName(this.tableName);
     }
@@ -194,7 +193,7 @@ export class OrderingListComponent implements OnInit {
       }
     });
   }
-
+ 
   // danh sách sp order => mobile ***
   toggleOpen() {
     this.isOpenOrder = false;
